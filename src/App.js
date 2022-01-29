@@ -1,6 +1,3 @@
-// the root component, or the wrapper component that houses all of the other components
-// To effect any change on the application either modify this file or add components inside it.
-
 import React, { useState } from 'react';
 import Nav from './components/Nav';
 import About from './components/About';
@@ -32,16 +29,14 @@ function App() {
         setContactSelected={setContactSelected}
       ></Nav>
       <main>
-        <div>
-          {!contactSelected ? (
-            <>
-              <Gallery currentCategory={currentCategory}></Gallery>
-              <About></About>
-            </>
-          ) : (
-            <ContactForm></ContactForm>
-          )}
-        </div>
+        {!contactSelected ? (
+          <>
+            <Gallery currentCategory={currentCategory}></Gallery>
+            <About></About>
+          </>
+        ) : (
+          <ContactForm></ContactForm>
+        )}
       </main>
     </div>
   );
